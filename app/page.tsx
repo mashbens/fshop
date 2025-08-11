@@ -250,6 +250,65 @@ export default function OnePageShop() {
           </motion.div>
         </section>
 
+                {/* PRODUCT LIST */}
+        <section id="products" className="p-6 pt-12">
+          <h3 className={`text-xl font-bold mb-4 ${themeClasses.textPrimary}`}>
+            🛍️ Katalog Produk Unggulan
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {products.map((p) => (
+              <motion.article
+                key={p.id}
+                whileHover={{ y: -6 }}
+                className={`${themeClasses.card} rounded-2xl p-4 shadow-sm`}
+              >
+                <div className="aspect-[4/3] rounded-xl overflow-hidden">
+                  {isLoading ? (
+                    <div className="w-full h-full bg-gray-500 animate-pulse"></div>
+                  ) : (
+                    <Image
+                      src={p.img}
+                      alt={p.title}
+                      width={800}
+                      height={600}
+                      className="w-full h-full object-cover"
+                    />
+                  )}
+                </div>
+                <div className="mt-3">
+                  <h4 className={`font-semibold ${themeClasses.textPrimary}`}>
+                    {p.title}
+                  </h4>
+                  <p className={`text-sm ${themeClasses.textSecondary} mt-1`}>
+                    {p.desc}
+                  </p>
+                  <div className="mt-4 flex items-center justify-between">
+                    <div className={`text-lg font-bold ${themeClasses.textPrimary}`}>
+                      Rp {formatRupiah(p.price)}
+                    </div>
+                    <div className="flex gap-2">
+                      <button
+                        onClick={() => goToWhatsApp(p.title, p.price)}
+                        className="px-3 py-2 rounded-md bg-green-600 text-white text-sm font-medium shadow hover:bg-green-700"
+                      >
+                        Pesan
+                      </button>
+                      <button
+                        onClick={() =>
+                          alert("Tambah fitur: detail produk (modal/page)")
+                        }
+                        className={`px-3 py-2 rounded-md border text-sm ${themeClasses.buttonSecondary}`}
+                      >
+                        Detail
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+        </section>
+
         {/* BENEFITS SECTION */}
         <section className="p-6 pt-0">
           <div className={`rounded-2xl p-6 ${isDark ? "bg-gray-700/50" : "bg-gray-100"} grid grid-cols-1 md:grid-cols-2 gap-6`}>
@@ -327,64 +386,7 @@ export default function OnePageShop() {
           </div>
         </section>
 
-        {/* PRODUCT LIST */}
-        <section id="products" className="p-6 pt-12">
-          <h3 className={`text-xl font-bold mb-4 ${themeClasses.textPrimary}`}>
-            🛍️ Katalog Produk Unggulan
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {products.map((p) => (
-              <motion.article
-                key={p.id}
-                whileHover={{ y: -6 }}
-                className={`${themeClasses.card} rounded-2xl p-4 shadow-sm`}
-              >
-                <div className="aspect-[4/3] rounded-xl overflow-hidden">
-                  {isLoading ? (
-                    <div className="w-full h-full bg-gray-500 animate-pulse"></div>
-                  ) : (
-                    <Image
-                      src={p.img}
-                      alt={p.title}
-                      width={800}
-                      height={600}
-                      className="w-full h-full object-cover"
-                    />
-                  )}
-                </div>
-                <div className="mt-3">
-                  <h4 className={`font-semibold ${themeClasses.textPrimary}`}>
-                    {p.title}
-                  </h4>
-                  <p className={`text-sm ${themeClasses.textSecondary} mt-1`}>
-                    {p.desc}
-                  </p>
-                  <div className="mt-4 flex items-center justify-between">
-                    <div className={`text-lg font-bold ${themeClasses.textPrimary}`}>
-                      Rp {formatRupiah(p.price)}
-                    </div>
-                    <div className="flex gap-2">
-                      <button
-                        onClick={() => goToWhatsApp(p.title, p.price)}
-                        className="px-3 py-2 rounded-md bg-green-600 text-white text-sm font-medium shadow hover:bg-green-700"
-                      >
-                        Pesan
-                      </button>
-                      <button
-                        onClick={() =>
-                          alert("Tambah fitur: detail produk (modal/page)")
-                        }
-                        className={`px-3 py-2 rounded-md border text-sm ${themeClasses.buttonSecondary}`}
-                      >
-                        Detail
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </motion.article>
-            ))}
-          </div>
-        </section>
+
 
         {/* FOOTER */}
         <footer
