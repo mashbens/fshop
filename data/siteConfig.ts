@@ -1,7 +1,7 @@
 export const SiteConfig = {
   businessName: "FSHOP Snack & Grosir",
   description: "Distributor Bahan Baku & Snack Terpercaya untuk Usaha Anda di Jabodetabek",
-  phone: "6281234567890",
+  phone: "62818128088448",
   features: [
     "✅ Harga Grosir Kompetitif — lebih murah untuk pembelian dalam jumlah besar.",
     "✅ Stok Selalu Ready — langsung dari gudang, tidak perlu menunggu lama.",

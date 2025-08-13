@@ -46,7 +46,7 @@ export const ProductHero = ({
         themeClasses.card
       } backdrop-blur-sm rounded-xl p-4 shadow-lg border`}>
         <h3 className={`font-semibold ${themeClasses.textPrimary}`}>
-          {/* {product.title} */}
+          {product.title}
         </h3>
         <div className="mt-3 flex items-center justify-between">
           <div className={`text-lg font-bold ${themeClasses.textPrimary}`}>
