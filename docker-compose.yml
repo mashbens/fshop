@@ -1,8 +1,8 @@
 version: "3.9"
 
 services:
-  fshop:
-    container_name: fshop-web
+  myshop:
+    container_name: myshop-web
     build:
       context: .
       dockerfile: Dockerfile
